@@ -1,0 +1,58 @@
+'use client'
+import Link from 'next/link'
+import React from 'react'
+import { inter, orbitron } from '../../public/fonts';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import { MessageCircleMore } from 'lucide-react';
+
+export default function Navbar() {
+
+  const pathname = usePathname();
+  const navLinks = [
+    {
+      id: 1,
+      link: '/',
+      name: 'Home Page'
+    },
+    {
+      id: 2,
+      link: '/about',
+      name: 'About Us'
+    },
+    {
+      id: 3,
+      link: '/service',
+      name: 'Services'
+    },
+    {
+      id: 4,
+      link: '/contact',
+      name: 'Contact Us'
+    }
+  ]
+  return (
+    <div className='flex flex-row justify-between m-4 p-2 bg-transparent'>
+      <div id='logo' className={`${orbitron.className} `}>talatech</div>
+      <nav id='navbar' >
+        <ul className='flex flex-row gap-8'>
+          {navLinks.map((item) => (
+            <li>
+              <Link key={item.id} href={item.link} className={clsx(
+                `${inter.className} text-primary text-lg`,
+                {
+                  'font-bold': pathname === item.link,
+                }
+              )}>
+                <li>{item.name}</li>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div id='chat'>
+        <MessageCircleMore size={18} />
+      </div>
+    </div>
+  )
+}
