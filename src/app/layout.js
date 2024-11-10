@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { inter } from "../../public/fonts";
+import { istokWeb } from "../../public/fonts";
 
 
 export const metadata = {
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={istokWeb.className}>
         <Navbar/>
         <main>{children}</main>
         <Footer/>

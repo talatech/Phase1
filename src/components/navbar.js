@@ -33,13 +33,13 @@ export default function Navbar() {
   ]
   return (
     <div className='flex flex-row justify-between m-4 p-2 bg-transparent'>
-      <div id='logo' className={`${orbitron.className} `}>talatech</div>
+      <div id='logo' className={`${orbitron.className} text-primary`}>talatech</div>
       <nav id='navbar' >
-        <ul className='flex flex-row gap-8'>
+        <ul className='flex flex-row gap-20 text-primary tex'>
           {navLinks.map((item) => (
             <li>
               <Link key={item.id} href={item.link} className={clsx(
-                `${inter.className} text-primary text-lg`,
+                `${inter.className} text-primary text-3xl`,
                 {
                   'font-bold': pathname === item.link,
                 }
