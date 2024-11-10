@@ -8,7 +8,20 @@
 }
 
 body {
-  background: linear-gradient(180deg, rgba(34,34,60,1) 0%, rgba(94,93,161,1) 100%);
-  background-repeat: no-repeat;
-  color: #BDB9C0;
+  background-color: #22223B;
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3{
+    @apply text-xl;
+  }
+  h4{
+    @apply text-lg;
+  }
 }
