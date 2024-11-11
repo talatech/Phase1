@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaBehance } from "react-icons/fa";
+import { FaBehance, FaGithub, FaInstagram, FaInstagramSquare, FaLinkedin, FaLinkedinIn, FaReddit, FaRedditAlien } from "react-icons/fa";
 
 export default function Footer() {
   const pageLinks = [
@@ -22,10 +22,33 @@ export default function Footer() {
       url: 'contact'
     },
   ]
+
+  const socialIcons = [
+    {
+      name: <FaBehance className='text-white'/>,
+      url: '/'
+    },
+    {
+      name: <FaLinkedinIn className='text-white'/>,
+      url: '/'
+    },
+    {
+      name: <FaGithub className='text-white'/>,
+      url: '/'
+    },
+    {
+      name: <FaRedditAlien className='text-white'/>,
+      url: '/'
+    },
+    {
+      name: <FaInstagramSquare className='text-white'/>,
+      url: '/'
+    }
+  ]
   return (
     <div className='bg-background flex flex-row justify-between items-center pr-40 pl-11'>
       <div className='py-7'>
-        <Image src='/logo.png' width={92} height={71} alt='logo'/>
+        <Image src='/logo.png' width={92} height={71} alt='logo' />
       </div>
       <div className='flex flex-col items-start gap-3'>
         <ul className='flex flex-row gap-12'>
@@ -33,9 +56,11 @@ export default function Footer() {
             <Link className='text-primary' key={index} href={item.url}>{item.name}</Link>
           ))}
         </ul>
-        <div className='flex flex-row gap-4 items-center'>
-          <ul>
-            <Link href='/'><FaBehance className='text-white'/></Link>
+        <div >
+          <ul className='flex flex-row gap-4 items-center'>
+            {socialIcons.map((item, index) => (
+              <Link className='text-xl' key={index} href={item.url}>{item.name}</Link>
+            ))}
           </ul>
         </div>
       </div>
