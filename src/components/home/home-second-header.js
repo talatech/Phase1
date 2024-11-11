@@ -3,7 +3,7 @@ import { inter } from '../../../public/fonts'
 
 export default function SecondHeader() {
   return (
-    <div className={`flex flex-row items-center justify-center bg-gradient-to-r from-violet-900 to-violet-500 text-white`}>
+    <div className={`flex flex-row items-center justify-center bg-gradient-to-br from-violet-900 to-violet-400 text-white`}>
       <div className='flex flex-row p-12 items-center'>
         <div className='flex flex-col items-start justify-center w-[832px] gap-3'>
           <h2 className={`${inter.className} text-5xl font-bold w-[744px]`}>Why Clients Trust Talatech Freelance Collective:</h2>

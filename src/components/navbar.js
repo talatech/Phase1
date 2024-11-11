@@ -37,16 +37,14 @@ export default function Navbar() {
       <nav id='navbar' >
         <ul className='flex flex-row gap-20 text-primary tex'>
           {navLinks.map((item) => (
-            <li>
-              <Link key={item.id} href={item.link} className={clsx(
-                `${inter.className} text-primary text-3xl`,
-                {
-                  'font-bold': pathname === item.link,
-                }
-              )}>
-                <li>{item.name}</li>
-              </Link>
-            </li>
+            <Link key={item.id} href={item.link} className={clsx(
+              `${inter.className} text-primary text-3xl `,
+              {
+                'font-bold': pathname === item.link,
+              }
+            )}>
+              <li>{item.name}</li>
+            </Link>
           ))}
         </ul>
       </nav>
