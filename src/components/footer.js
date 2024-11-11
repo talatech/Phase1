@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <div className='bg-background flex flex-row justify-between items-center pr-40 pl-11'>
       <div className='py-7'>
-        <Image src='/logo.png' width={92} height={71}/>
+        <Image src='/logo.png' width={92} height={71} alt='logo'/>
       </div>
       <div className='flex flex-col items-start gap-3'>
         <ul className='flex flex-row gap-12'>
