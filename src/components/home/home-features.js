@@ -12,7 +12,7 @@ export default function HomeServices() {
     },
     {
       name: 'Competitive payment structure',
-      icon: '/icons/vector.png',
+      icon: '/icons/tailwind.png',
       description: `We offer high-value services at competitive rates, making top-quality freelance solutions accessible for businesses of all sizes.`,
     },
     {
