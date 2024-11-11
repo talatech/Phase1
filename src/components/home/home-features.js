@@ -28,7 +28,7 @@ export default function HomeServices() {
         {serviceData.map((item, index) => (
           <div key={index} className='flex flex-col gap-7 bg-white p-10 rounded-2xl '>
             <div className='flex items-center p-4 bg-violet-900 w-16 rounded-2xl h-16'>
-              <Image src={item.icon} width={36} height={36} alt='project-based-model' />
+              <Image src={item.icon} width={36} height={36} alt={item.name} />
             </div>
             <div className='flex flex-col gap-4 w-[290px]'>
               <h2 className='text-gray-900 text-2xl font-semibold'>{item.name}</h2>
