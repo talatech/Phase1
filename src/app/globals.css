@@ -25,3 +25,7 @@ body {
     @apply text-lg;
   }
 }
+
+input{
+  width: 100%;
+}
