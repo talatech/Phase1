@@ -1,6 +1,7 @@
 import React from 'react'
 import { inter } from '/public/fonts.js'
 import Image from 'next/image'
+import Card from '../card'
 
 export default function Clients() {
 
@@ -26,13 +27,7 @@ export default function Clients() {
       <h1 className={`${inter.className} text-white text-7xl font-bold `}>Notable Clients</h1>
       <div className='flex flex-row gap-20'>
         {clientsData.map((item, index) => (
-          <div key={index} className='flex flex-col rounded-2xl overflow-hidden w-96'>
-            <Image src={item.imageUrl} className='w-full' width={370} height={200} alt={item.button}/>
-            <div className='flex flex-col items-center justify-center p-8 gap-7 bg-white'>
-              <p className={`${inter.className} text-2xl text-center font-semibold`}>{item.name}</p>
-              <p className='rounded-full flex px-7 py-3 border font-semibold'>{item.button}</p>
-            </div>
-          </div>
+          <Card index={index} item={item}></Card>
         ))}
       </div>
     </div>
