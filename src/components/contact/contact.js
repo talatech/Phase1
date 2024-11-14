@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import validator from 'validator';
 
-export default function Contact() {
+export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: '',
     service: '',
