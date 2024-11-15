@@ -8,17 +8,17 @@ export default function Clients() {
   const clientsData = [
     {
       name: 'Revamped their e-commerce platform, resulting in a 30% increase in sales.',
-      imageUrl: '/tesla.png',
+      imageUrl: '/thumbnail/tesla.png',
       button: 'ABC Corp'
     },
     {
       name: 'Delivered an MVP that attracted their first round of investors in less than 3 months.',
-      imageUrl: '/vw.png',
+      imageUrl: '/thumbnail/vw.png',
       button: 'XYZ startup'
     },
     {
       name: 'Provided video editing services that increased their YouTube subscribers by 50%.',
-      imageUrl: '/slack.png',
+      imageUrl: '/thumbnail/slack.png',
       button: 'Digital Media'
     }
   ]
