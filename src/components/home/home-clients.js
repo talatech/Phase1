@@ -27,7 +27,7 @@ export default function Clients() {
       <h1 className={`${inter.className} text-white text-7xl font-bold `}>Notable Clients</h1>
       <div className='flex flex-row gap-20'>
         {clientsData.map((item, index) => (
-          <Card index={index} item={item}></Card>
+          <Card key={index} index={index} item={item}></Card>
         ))}
       </div>
     </div>

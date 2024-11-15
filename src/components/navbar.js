@@ -32,7 +32,7 @@ export default function Navbar() {
     }
   ]
   return (
-    <div className='flex flex-row justify-between m-4 p-2 bg-transparent'>
+    <div className='flex flex-row justify-between m-4 py-2 px-10 bg-transparent'>
       <div id='logo' className={`${orbitron.className} text-primary`}>talatech</div>
       <nav id='navbar' >
         <ul className='flex flex-row gap-20 text-primary tex'>
@@ -49,7 +49,7 @@ export default function Navbar() {
         </ul>
       </nav>
       <div id='chat'>
-        <MessageCircleMore size={18} />
+        <MessageCircleMore size={40} className='text-white pr-20'/>
       </div>
     </div>
   )

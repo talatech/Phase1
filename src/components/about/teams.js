@@ -33,7 +33,7 @@ export default function Teams() {
       <h2 className={`${inter.className} text-white text-6xl font-bold`}>Meet the team</h2>
       <div className='flex flex-row gap-20'>
         {teamsData.map((item, index) => (
-          <Card index={index} item={item}></Card>
+          <Card key={index} index={index} item={item}></Card>
         ))}
       </div>
     </div>
