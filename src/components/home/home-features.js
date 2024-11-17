@@ -23,8 +23,8 @@ export default function HomeServices() {
   ]
   return (
     <div className={`${inter.className} flex flex-col items-center py-32 gap-9 bg-gradient-to-br from-purple-500 to-violet-900`}>
-      <h1 className='text-white text-7xl font-bold'>What Sets Us Apart?</h1>
-      <div className='flex flex-row gap-4'>
+      <h1 className='text-white text-2xl sm:text-5xl md:text-7xl font-bold'>What Sets Us Apart?</h1>
+      <div className='flex flex-col lg:flex-row flex-wrap justify-center gap-4'>
         {serviceData.map((item, index) => (
           <div key={index} className='flex flex-col gap-7 bg-white p-10 rounded-2xl '>
             <div className='flex items-center p-4 bg-violet-900 w-16 rounded-2xl h-16'>

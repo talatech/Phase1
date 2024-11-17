@@ -27,30 +27,6 @@ export default function ContactUs() {
   const validateForm = () => {
     let formErrors = {};
 
-    // Name validation (required)
-    if (!formData.name) {
-      formErrors.name = 'Name is required';
-    }
-
-    // Service validation (required)
-    if (!formData.service) {
-      formErrors.service = 'Service is required';
-    }
-
-    // Duration validation (must be a positive integer)
-    if (!formData.duration) {
-      formErrors.duration = 'Duration is required';
-    } else if (!Number(formData.duration) || formData.duration <= 0) {
-      formErrors.duration = 'Duration must be a positive number';
-    }
-
-    // Budget validation (must be a positive number)
-    if (!formData.budget) {
-      formErrors.budget = 'Budget is required';
-    } else if (!Number(formData.budget) || formData.budget <= 0) {
-      formErrors.budget = 'Budget must be a positive number';
-    }
-
     // Mobile validation (must be a valid mobile number)
     if (!formData.mobile) {
       formErrors.mobile = 'Mobile number is required';
@@ -65,31 +41,25 @@ export default function ContactUs() {
       formErrors.email = 'Email is not valid';
     }
 
-    // Message validation (required)
-    if (!formData.message) {
-      formErrors.message = 'Message is required';
-    }
-
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0; // returns true if no errors
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validate the form
     if (validateForm()) {
       alert('Form submitted successfully!');
       console.log(formData);
       // Handle actual form submission here (e.g., API call)
     }
+    window.location.reload();
   };
 
   return (
     <div className='flex flex-col bg-[#F2E9E4] p-20'>
       <h2 className='font-bold text-6xl text-center'>Contact Us</h2>
       <div className='my-14' >
-        <form onSubmit={handleSubmit} className='flex flex-col gap-5 max-w-5xl' style={{margin: "auto"}}>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-5 max-w-5xl' style={{ margin: "auto" }}>
           <div className='flex flex-row justify-between gap-48'>
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
@@ -99,8 +69,8 @@ export default function ContactUs() {
               value={formData.name}
               onChange={handleChange}
               placeholder='David John'
-              />
-            {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
+              required
+            />
 
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
@@ -109,9 +79,9 @@ export default function ContactUs() {
               name="service"
               value={formData.service}
               onChange={handleChange}
+              required
               placeholder='Service'
-              />
-            {errors.service && <div style={{ color: 'red' }}>{errors.service}</div>}
+            />
           </div>
           <div className='flex flex-row justify-between gap-48'>
             <input
@@ -122,8 +92,8 @@ export default function ContactUs() {
               value={formData.duration}
               onChange={handleChange}
               placeholder='Duration'
-              />
-            {errors.duration && <div style={{ color: 'red' }}>{errors.duration}</div>}
+              required
+            />
 
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
@@ -133,32 +103,37 @@ export default function ContactUs() {
               value={formData.budget}
               onChange={handleChange}
               placeholder='Budget'
-              />
-            {errors.budget && <div style={{ color: 'red' }}>{errors.budget}</div>}
+              required
+            />
           </div>
 
           <div className='flex flex-row justify-between gap-48'>
-            <input
-              className='p-3 rounded-md border-[#DFE4EA]'
-              type="text"
-              id="mobile"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleChange}
-              placeholder='Mobile Number'
+            <div className='flex flex-col w-full'>
+              <input
+                className='p-3 rounded-md border-[#DFE4EA]'
+                type="text"
+                id="mobile"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder='Mobile Number'
+                required
               />
-            {errors.mobile && <div style={{ color: 'red' }}>{errors.mobile}</div>}
-
-            <input
-              className='p-3 rounded-md border-[#DFE4EA]'
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder='info@example.com'
+              {errors.mobile && <div style={{ color: 'red' }}>{errors.mobile}</div>}
+            </div>
+            <div className='flex flex-col w-full'>
+              <input
+                className='p-3 rounded-md border-[#DFE4EA]'
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder='info@example.com'
+                required
               />
-            {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
+              {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
+            </div>
           </div>
 
           <div className='flex flex-row gap-5 items-end'>
@@ -171,9 +146,9 @@ export default function ContactUs() {
               placeholder='info@example.com'
               rows={5}
               cols={100}
-              />
-            {errors.message && <div style={{ color: 'red' }}>{errors.message}</div>}
-          <button className='flex items-center bg-blue-600 py-3 px-8 text-white rounded-full' type="submit">Submit</button>
+              required
+            />
+            <button className='flex items-center bg-blue-600 py-3 px-8 text-white rounded-full' type="submit">Submit</button>
           </div>
 
         </form>

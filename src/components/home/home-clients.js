@@ -23,9 +23,9 @@ export default function Clients() {
     }
   ]
   return (
-    <div className='flex flex-col gap-4 items-center p-11 pb-24 bg-gradient-to-b from-slate-700 to-indigo-300'>
+    <div className='flex flex-col lg:gap-6 gap-10 items-center p-11 pb-24 bg-gradient-to-b from-slate-700 to-indigo-300'>
       <h1 className={`${inter.className} text-white text-7xl font-bold `}>Notable Clients</h1>
-      <div className='flex flex-row gap-20'>
+      <div className='flex flex-col flex-wrap justify-center lg:flex-row gap-20 '>
         {clientsData.map((item, index) => (
           <Card key={index} index={index} item={item}></Card>
         ))}
