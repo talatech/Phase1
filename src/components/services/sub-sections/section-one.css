@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 150px; /* Space between sections */
+  overflow: hidden;
+}
+
+/* Specific positioning for icons */
+.mongoDB {
+  top: -10px;
+  left: 5%;
+}
+
+.react {
+  top: -100px;
+  right: 5%;
+}
+
+.html-css {
+  top: 200px;
+  right: 10%;
+}
+
+.premiere {
+  top: -30px;
+  left: 5%;
+}
+
+.davinci {
+  top: 320px;
+  right: 5%;
+}
+
+.shield {
+  top: 250px;
+  left: 15%;
+}
+
+.bitdefender {
+  top: 10px;
+  right: 15%;
+}
+
+.aws {
+  top: 0px;
+  right: 10%;
+}
+
+.devops {
+  top: 330px;
+  left: 5%;
+}
+
+.seo {
+  top: 40px;
+  right: 10%;
+}
+
+.man{
+  top: 40px;
+  left: 10%;
+  
+}
+
+.circle h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.circle p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .icon {
+    width: 50px;
+  }
+
+  .ladder {
+    width: 100px;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle h2 {
+    font-size: 1.2rem;
+  }
+
+  .circle p {
+    font-size: 0.9rem;
+  }
+}
