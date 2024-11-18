@@ -45,12 +45,15 @@ export default function ContactUs() {
     return Object.keys(formErrors).length === 0; // returns true if no errors
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
+      const result = await fetch('api/contact',
+        {
+          method: 'POST',
+        }
+      )
       alert('Form submitted successfully!');
-      console.log(formData);
-      // Handle actual form submission here (e.g., API call)
     }
     window.location.reload();
   };
