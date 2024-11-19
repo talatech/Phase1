@@ -1,9 +1,8 @@
 import React from 'react'
 import { inter } from '/public/fonts.js'
-import Image from 'next/image'
-import Card from '../card'
+import Card from '@/components/card'
 
-export default function Bundles() {
+export default function SectionBundle() {
 
   const clientsData = [
     {
@@ -31,7 +30,7 @@ export default function Bundles() {
     'Targeted video editing for short, promotional videos'      
   ]
   return (
-    <div className='lg:flex hidden flex-col lg:gap-24 gap-10 items-center p-11 pb-24 bg-gradient-to-l from-gray-900 to-blue-800'>
+    <div className='lg:flex hidden flex-col lg:gap-24 gap-10 items-center p-11 pb-24 bg-gradient-to-l from-purple-500 to-violet-900'>
       <h1 className={`${inter.className} text-white text-7xl font-bold `}>Bundles</h1>
       <div className='flex flex-col flex-wrap justify-center lg:flex-row gap-20 '>
         {clientsData.map((item, index) => (

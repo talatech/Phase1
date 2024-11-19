@@ -71,14 +71,14 @@ export default function ContactUs() {
   };
 
   return (
-    <div className='flex flex-col bg-[#F2E9E4] p-20'>
-      <h2 className='font-bold text-6xl text-center'>Contact Us</h2>
+    <div className='flex flex-col bg-gradient-to-br from-purple-500 to-violet-900 py-10 px-8 lg:p-20'>
+      <h2 className='font-bold text-white text-4xl lg:text-6xl text-center'>Contact Us</h2>
       <div className='my-14' >
         <form onSubmit={handleSubmit} className='flex flex-col gap-5 max-w-5xl' style={{ margin: "auto" }}>
-          <div className='flex flex-row justify-between gap-48'>
+          <div className='flex flex-col lg:flex-row gap-5 lg:gap-48 justify-between'>
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
-              type="text"
+              type="text" 
               id="name"
               name="name"
               value={formData.name}
@@ -98,17 +98,21 @@ export default function ContactUs() {
               placeholder='Service'
             />
           </div>
-          <div className='flex flex-row justify-between gap-48'>
+          <div className='flex flex-col lg:flex-row gap-5 lg:gap-48  justify-between '>
+
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
-              type="number"
-              id="duration"
-              name="duration"
-              value={formData.duration}
+              type="text"
+              id="mobile"
+              name="mobile"
+              value={formData.mobile}
               onChange={handleChange}
-              placeholder='Duration'
+              placeholder='Mobile Number'
               required
             />
+            {errors.mobile && <div style={{ color: 'red' }}>{errors.mobile}</div>}
+
+
 
             <input
               className='p-3 rounded-md border-[#DFE4EA]'
@@ -122,20 +126,7 @@ export default function ContactUs() {
             />
           </div>
 
-          <div className='flex flex-row justify-between gap-48'>
-            <div className='flex flex-col w-full'>
-              <input
-                className='p-3 rounded-md border-[#DFE4EA]'
-                type="text"
-                id="mobile"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleChange}
-                placeholder='Mobile Number'
-                required
-              />
-              {errors.mobile && <div style={{ color: 'red' }}>{errors.mobile}</div>}
-            </div>
+          <div className='flex flex-col lg:flex-row justify-between gap-5 lg:gap-48'>
             <div className='flex flex-col w-full'>
               <input
                 className='p-3 rounded-md border-[#DFE4EA]'
@@ -149,9 +140,22 @@ export default function ContactUs() {
               />
               {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
             </div>
+            <div className='flex flex-col w-full'>
+              <input
+                className='p-3 rounded-md border-[#DFE4EA]'
+                type="number"
+                id="duration"
+                name="duration"
+                value={formData.duration}
+                onChange={handleChange}
+                placeholder='Duration'
+                required
+              />
+
+            </div>
           </div>
 
-          <div className='flex flex-row gap-5 items-end'>
+          <div className='flex flex-col lg:flex-row gap-5 items-end'>
             <textarea
               className='p-3 rounded-md border-[#DFE4EA] w-full'
               id="message"
@@ -163,7 +167,7 @@ export default function ContactUs() {
               cols={100}
               required
             />
-            <button className='flex items-center bg-blue-600 py-3 px-8 text-white rounded-full' type="submit">Submit</button>
+            <button className='flex items-center bg-primary py-3 px-8 text-black rounded-full' type="submit">Submit</button>
           </div>
 
         </form>

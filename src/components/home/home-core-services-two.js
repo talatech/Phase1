@@ -31,7 +31,7 @@ export default function HomeCoreServices() {
   return (
     <div className='w-full bg-purple-500 text-white hidden lg:flex flex-col gap-10 text-center p-12 m-auto'>
         <h2 className='text-5xl font-bold'>Core Services - Boost Your Digital Presence</h2>
-      <div className='flex flex-row gap-5 items-center justify-center'>
+      <div className='flex flex-row gap-5 items-center justify-between px-0 md:px-10 2xl:px-60'>
         <div className='flex flex-col gap-5 text-start w-1/2 max-w-xl'>
           <p className='text-3xl font-bold'>Following an audit, our core services help you implement growth-driven solutions:</p>
           <ul className='flex flex-col text-start'>

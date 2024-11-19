@@ -50,7 +50,7 @@ export default function Footer() {
       <div className=''>
         <Image src='/logos/logo-y.png' width={66} height={73} alt='logo' />
       </div>
-      <div className='flex flex-col items-center lg:tems-start gap-3'>
+      <div className='flex flex-col items-center lg:items-start gap-3'>
         <ul className='flex flex-row gap-3 lg:gap-12'>
           {pageLinks.map((item, index) => (
             <Link className='text-primary' key={index} href={item.url}>{item.name}</Link>

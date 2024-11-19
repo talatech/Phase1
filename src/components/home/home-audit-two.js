@@ -24,9 +24,9 @@ export default function HomeAudit() {
     },
   ]
   return (
-    <div className='w-full bg-gradient-to-l hidden from-gray-900 to-blue-800 text-white lg:flex flex-col gap-10 text-center p-12 m-auto'>
+    <div className='w-full hidden bg-gradient-to-l  from-gray-900 to-blue-800 text-white lg:flex flex-col gap-10 text-center p-12 m-auto'>
       <h2 className='text-5xl font-bold'>Why Start with a TalaTech Audit?</h2>
-      <div className='flex flex-row-reverse gap-5 items-center justify-center'>
+      <div className='flex flex-row-reverse  items-center justify-between px-0 md:px-10 2xl:px-60'>
         <div className='flex flex-col gap-5 text-start w-1/2 max-w-xl'>
           <p className='text-3xl font-bold'>Our Audits reveal key opportunities for your business. With a free mini audit, we highlight improvement areas, enabling you to make data-driven decisions.</p>
           <div className={`${inter.className}`}>

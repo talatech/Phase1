@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function SectionOne() {
   return (
-    <div className="flex flex-col items-center relative gap-36 py-20 overflow-hidden">
+    <div className="flex flex-col items-center relative gap-36 py-20 overflow-hidden bg-gradient-to-l from-gray-900 to-blue-800">
       {/* Section 1: Full-stack web development */}
       <div className="relative w-full h-[350px] my-36">
         <Image width={400} height={400} src='/logos/mongoDB.png' alt="MongoDB Logo" className="absolute w-1/6 h-auto mongoDB" />
