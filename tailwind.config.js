@@ -17,9 +17,9 @@ module.exports = {
         'hero-pattern' : "url('/bg-home.png')"
       },
       textShadow: {
-        sm: '0 1px 2px var(--tw-shadow-color)',
-        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-        lg: '0 8px 16px var(--tw-shadow-color)',
+        sm: '0 1px 2px rgba(0, 0, 0, 0.3)',
+        DEFAULT: '0 3px 3px #00000030',
+        lg: '0 8px 16px rgba(0, 0, 0, 0.3)',
       },
     },
   },
