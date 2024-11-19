@@ -1,14 +1,14 @@
 import nodemailer from "nodemailer";
-require('dotenv').config();
+import 'dotenv/config'
 
-export default async function (req, res) {
+export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, message, duration, budget, mobile } = req.body;
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.your-email-provider.com", // e.g., smtp.gmail.com
-      port: 465, // Or 465 for SSL
-      secure: true, // true for port 465, false for other ports
+      host: "smtp.mailersend.net", // e.g., smtp.gmail.com
+      port: 587, // Or 465 for SSL
+      secure: false, // true for port 465, false for other ports
       auth: {
         user: process.env.EMAIL, // Your email
         pass: process.env.PASSWORD, // Your email password or app-specific password
@@ -19,8 +19,8 @@ export default async function (req, res) {
       // Send email
       await transporter.sendMail({
         from: `"${name}" <${email}>`, // Sender name and email
-        to: "business-email@example.com", // Your business email
-        subject: "New Contact Form Submission",
+        to: "shsalman114@gmail.com", // Your business email
+        subject: "New Lead form Submission",
         text: message, // Plain text body
         html: `<p><strong>Name:</strong> ${name}</p>
                <p><strong>Email:</strong> ${email}</p>

@@ -5,6 +5,7 @@ import { inter, orbitron } from '../../public/fonts';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import { MessageCircleMore, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -18,14 +19,14 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="flex flex-row justify-between items-center m-4 py-2 px-10 bg-transparent">
-      {/* Logo */}
-      <div id="logo" className={`${orbitron.className} text-primary`}>
-        talatech
+    <div className="flex flex-row justify-between items-center m-4 lg:py-2 px-10 bg-transparent">
+      <div className='lg:hidden block'></div>
+      <div id="logo" className={`${orbitron.className} text-primary text-2xl`}>
+        <Link href='/'><Image src='/logos/logo-x.png' width={172} height={36} alt='logo' /></Link>
       </div>
 
       {/* Desktop Navbar */}
-      <nav id="navbar-desktop" className="hidden md:flex flex-row gap-5 lg:gap-20 text-primary">
+      <nav id="navbar-desktop" className="hidden lg:flex flex-row gap-5 lg:gap-20 text-primary">
         {navLinks.map((item) => (
           <Link
             key={item.id}
@@ -41,11 +42,11 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navbar */}
-      <div className="relative md:hidden">
+      <div className="relative lg:hidden">
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-primary focus:outline-none"
+          className="text-primary focus:outline-none relative z-40"
         >
           {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
@@ -54,7 +55,7 @@ export default function Navbar() {
         <nav
           id="navbar-mobile"
           className={clsx(
-            "fixed top-0 left-0 w-full h-full bg-white text-black shadow-lg p-5 transition-all duration-300 z-50",
+            "fixed top-16 left-0 w-full h-full bg-white text-black shadow-lg p-5 transition-all duration-300 z-50",
             { "opacity-100 translate-y-0": isOpen, "opacity-0 -translate-y-full pointer-events-none": !isOpen }
           )}
         >
@@ -77,8 +78,8 @@ export default function Navbar() {
       </div>
 
       {/* Chat Icon */}
-      <div className="chat hidden md:block">
-        <MessageCircleMore size={40} className="text-white" />
+      <div className="chat hidden lg:block">
+        <MessageCircleMore size={40} className="text-primary" />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import validator from 'validator';
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: '',
     service: '',
     duration: '',
@@ -11,7 +11,8 @@ export default function ContactUs() {
     mobile: '',
     email: '',
     message: '',
-  });
+  }
+  const [formData, setFormData] = useState(initialFormData);
 
   const [errors, setErrors] = useState({});
 
@@ -51,11 +52,22 @@ export default function ContactUs() {
       const result = await fetch('api/contact',
         {
           method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData),
         }
-      )
+      ).then((res) => {
+        console.log('Response received')
+        if (res.status === 200) {
+          console.log('Response succeeded!')
+          setFormData(initialFormData);
+        }
+      })
       alert('Form submitted successfully!');
+      console.log('result', result)
     }
-    window.location.reload();
   };
 
   return (

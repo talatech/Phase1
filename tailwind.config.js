@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#F2E9E4",
+        primary: "#E1A9FF",
         background: "#22223B",
+        secondary: '#111928'
       },
+      backgroundImage : {
+        'hero-pattern' : "url('/bg-home.png')"
+      }
     },
   },
   plugins: [],
