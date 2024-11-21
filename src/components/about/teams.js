@@ -10,21 +10,27 @@ export default function Teams() {
       imageUrl: '/thumbnail/team-2.png',
       button: 'Designation',
       subtitle: 'Lorem sit laboris icia ea nulla culpa. Mollit sunt reprehenderit occaecat aute commodo aute.',
-      className: 'text-gray-500'
+      className: 'text-gray-500',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     },
     {
       name: 'John Doe',
       imageUrl: '/thumbnail/team-1.png',
       button: 'Designation',
       subtitle: 'Lorem sit laboris icia ea nulla culpa. Mollit sunt reprehenderit occaecat aute commodo aute.',
-      className: 'text-gray-500'
+      className: 'text-gray-500',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     },
     {
       name: 'John Doe',
       imageUrl: '/thumbnail/team-3.png',
       button: 'Designation',
       subtitle: 'Lorem sit laboris icia ea nulla culpa. Mollit sunt reprehenderit occaecat aute commodo aute.',
-      className: 'inter.className text-gray-500'
+      className: 'text-gray-500',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     }
   ]
 

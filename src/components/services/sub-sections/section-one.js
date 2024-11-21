@@ -20,7 +20,7 @@ export default function SectionOne() {
               your current platform.
             </p>
             <div className="flex justify-center mt-10">
-              <Link href='/services/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
+              <Link href='/service/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
                 <span className="lg:text-2xl">Learn more</span>
                 <MoveUpRight size={32} />
               </Link>
@@ -39,7 +39,7 @@ export default function SectionOne() {
               and more.
             </p>
             <div className="flex justify-center mt-10">
-              <Link href='/services/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
+              <Link href='/service/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
                 <span className="lg:text-2xl">Learn more</span>
                 <MoveUpRight size={32} />
               </Link>
@@ -72,7 +72,7 @@ export default function SectionOne() {
             assets.
           </p>
           <div className="flex justify-center mt-10">
-              <Link href='/services/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
+              <Link href='/service/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
                 <span className="text-2xl">Learn more</span>
                 <MoveUpRight size={32} />
               </Link>
@@ -91,7 +91,7 @@ export default function SectionOne() {
               Scale your operations with secure, cost-efficient cloud technology.
             </p>
             <div className="flex justify-center mt-10">
-              <Link href='/services/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
+              <Link href='/service/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
                 <span className="lg:text-2xl">Learn more</span>
                 <MoveUpRight size={32} />
               </Link>
@@ -112,7 +112,7 @@ export default function SectionOne() {
               boost traffic.
             </p>
             <div className="flex justify-center mt-10">
-              <Link href='/services/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
+              <Link href='/service/portfolio' className="flex flex-row gap-5 px-5 py-3 items-center justify-center bg-primary rounded-md">
                 <span className="lg:text-2xl">Learn more</span>
                 <MoveUpRight size={32} />
               </Link>

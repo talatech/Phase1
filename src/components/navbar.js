@@ -10,7 +10,8 @@ import Image from 'next/image';
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
+  
+    console.log('pathname', pathname)
   const navLinks = [
     { id: 1, link: '/', name: 'Home Page' },
     { id: 2, link: '/about', name: 'About Us' },
@@ -33,7 +34,11 @@ export default function Navbar() {
             href={item.link}
             className={clsx(
               `${inter.className} text-primary text-xl xl:text-3xl`,
-              { 'font-bold': pathname === item.link }
+              { 
+                'font-bold': 
+                  pathname === item.link || 
+                  (item.link !== '/' && pathname.split('/')[1] === item.link.split('/')[1])
+              }
             )}
           >
             {item.name}

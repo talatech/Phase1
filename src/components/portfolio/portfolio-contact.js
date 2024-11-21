@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import validator from 'validator';
 
-export default function ContactUs() {
+export default function PortfolioContact() {
+  
   const initialFormData = {
     name: '',
     service: '',
@@ -71,8 +72,8 @@ export default function ContactUs() {
   };
 
   return (
-    <div className='flex flex-col bg-gradient-to-br from-purple-500 to-violet-900 py-10 px-8 lg:p-20'>
-      <h2 className='font-bold text-white text-4xl lg:text-6xl text-center'>Contact Us</h2>
+    <div className='flex flex-col bg-secondary py-10 px-8 lg:p-20'>
+      <h2 className='font-bold text-white text-4xl lg:text-6xl text-center'>Send us query</h2>
       <div className='my-14' >
         <form onSubmit={handleSubmit} className='flex flex-col gap-5 max-w-5xl' style={{ margin: "auto" }}>
           <div className='flex flex-col lg:flex-row gap-5 lg:gap-48 justify-between'>
@@ -176,4 +177,5 @@ export default function ContactUs() {
     </div>
   );
 };
+
 

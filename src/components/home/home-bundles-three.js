@@ -10,19 +10,25 @@ export default function Bundles() {
       name: 'Startup Digital Launch Bundle',
       imageUrl: '/thumbnail/web-development.png',
       subtitle: 'Website development, SEO, and essential branding',
-      className: 'font-bold text-2xl'
+      className: 'font-bold text-2xl',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     },
     {
       name: 'Growth Bundle',
       imageUrl: '/thumbnail/seo.png',
       subtitle: 'Content audit, SEO, and CRO for established businesses.',
-      className: 'font-bold text-2xl'
+      className: 'font-bold text-2xl',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     },
     {
       name: 'Basic Security & Infrastructure Bundle',
       imageUrl: '/thumbnail/security.png',
       subtitle: 'Security assessment and basic AWS setup',
-      className: 'font-bold text-2xl'
+      className: 'font-bold text-2xl',
+      background: 'bg-white',
+      nameClassName: 'text-primary font-bold'
     }
   ]
   const addOnList = [
