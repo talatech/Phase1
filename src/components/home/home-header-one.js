@@ -1,23 +1,88 @@
-import { MoveUpRight } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
-import { manrope } from '../../../public/fonts'
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 export default function HomeHeader() {
+  const videoRef = useRef(null);
+  const [timeLeft, setTimeLeft] = useState({ days: "00", hours: "00", minutes: "00", seconds: "00" });
+
+  useEffect(() => {
+    // Video speed
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.2;
+    }
+
+    // Offer Date
+    const offerDeadline = new Date("2024-12-01T23:59:59").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = offerDeadline - now;
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, "0"),
+          hours: String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, "0"),
+          minutes: String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0"),
+          seconds: String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, "0"),
+        });
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer); 
+  }, []);
+
   return (
-    <div className='flex justify-center py-20 lg:py-72 bg-hero-pattern bg-no-repeat bg-cover  px-10 sm:px-32 text-center m-0'>
-      <div className='flex flex-col justify-center text-white gap-3 lg:gap-10  max-w-[1350px]'>
-        <h1 className='text-5xl text-wrap text-center font-bold'>Welcome to Talatech</h1>
-        <div className='flex flex-col gap-4 lg:gap-3 items-center'>
-          <p className='text-xl'>Ready to Elevate Your Business with expert Freelance Solutions? Look No Further!</p>
-          <p className={`${manrope.className} text-white text-center`}>At TalaTech, we specialize in <span className='font-bold'>Website Performance Audits, Full Stack Web Development, Digital Marketing, and SEO.</span> From quick assessments to comprehensive solutions, our team is here to drive your growth through expert audits and project-based services.</p>
-          <div className='flex flex-row items-center gap-3 text-black bg-primary rounded-md py-2 px-5 justify-center max-w-fit mt-10'>
-            <Link className='text-2xl' href='/about'>Get a Free Mini Audit</Link>
-            <MoveUpRight size={32} />
+    <section className="relative w-full h-screen flex items-center justify-center text-center text-white">
+      {/* Video */}
+      <video
+        ref={videoRef}
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        src="/videos/hero-blackfriday.mp4"
+        autoPlay
+        loop
+        muted
+      ></video>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Title */}
+        <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+          Unlock Your Website's Potential: Black Friday & Cyber Monday Deals!
+        </h1>
+        <p className="text-xl mb-8">
+          Mini Audits for $40 (Save 50%) — Reserve Free Audits for Cyber Monday or Black Friday!
+        </p>
+        <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 p-2 px-4 rounded-xl">
+          Reserve Your Audit Now
+        </button>
+
+        {/* Counter */}
+        <div className="mt-10">
+          <h2 className="text-3xl font-bold text-pink-600 mb-4 animate-pulse">Hurry Up!</h2>
+          <div className="flex justify-center gap-10 text-2xl font-semibold">
+            <div>
+              <span className="block text-7xl">{timeLeft.days}</span>
+              <span className="text-sm uppercase">Days</span>
+            </div>
+            <div>
+              <span className="block text-7xl">{timeLeft.hours}</span>
+              <span className="text-sm uppercase">Hours</span>
+            </div>
+            <div>
+              <span className="block text-7xl">{timeLeft.minutes}</span>
+              <span className="text-sm uppercase">Minutes</span>
+            </div>
+            <div>
+              <span className="block text-7xl">{timeLeft.seconds}</span>
+              <span className="text-sm uppercase">Seconds</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  )
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"></div>
+    </section>
+  );
 }
